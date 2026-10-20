@@ -4,7 +4,7 @@ import { TituloSeccion } from '../atoms/TituloSeccion';
 import { TarjetaProyecto } from '../molecules/TarjetaProyecto';
 import { Boton } from '../atoms/Boton';
 
-export const Proyectos = ({ proyectos }) => {
+export const Proyectos = ({ proyectos = [] }) => {
     const [filtro, setFiltro] = useState('Todos');
     const categorias = ['Todos', 'Web', 'Kotlin'];
 

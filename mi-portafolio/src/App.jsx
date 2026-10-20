@@ -1,5 +1,5 @@
 import React from 'react';
-import { InicioPortafolio } from './components/pages/InicioPortafolio.jsx';
+import  InicioPortafolio  from './components/pages/InicioPortafolio.jsx';
 
 export function App() {
     return <InicioPortafolio />;

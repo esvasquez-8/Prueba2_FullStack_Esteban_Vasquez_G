@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, Alert } from 'antd';
-import { GithubOutlined, SendOutlined } from '@ant-design/icons';
+import { GithubOutlined, SendOutlined, MailOutlined } from '@ant-design/icons';
 import { TituloSeccion } from '../atoms/TituloSeccion';
 import { Formulario } from '../molecules/Formulario';
 import { Boton } from '../atoms/Boton';
 import { usoFormulario } from '../../hooks/usoFormulario';
 
-export const Contacto = ({ github }) => {
+export const Contacto = ({ github, correo }) => {
     const { datos, errores, enviado, cambiarValor, enviarFormulario } = usoFormulario();
 
     return (
@@ -14,6 +14,7 @@ export const Contacto = ({ github }) => {
             <TituloSeccion titulo="Contacto" subtitulo="Mis redes y formulario" />
             <div style={{ textAlign: 'center', marginBottom: '20px' }}>
                 <Boton texto="GitHub" link={github} tipo="default" icono={<GithubOutlined />} />
+                <Boton texto="Gmail" link={`mailto:${correo}`} tipo="primary" icono={<MailOutlined />} />
             </div>
 
             <Card style={{ maxWidth: '550px', margin: '0 auto' }}>

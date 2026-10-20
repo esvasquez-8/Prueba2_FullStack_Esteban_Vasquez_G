@@ -1,24 +1,20 @@
 import React from 'react';
-import { Tabs, Typography } from 'antd';
+import { Menu } from 'antd';
 
-const { Title } = Typography;
-
-export const BarraNavegacion = ({ pestanaActiva, setPestanaActiva }) => {
-    const pestanas = [
-        { key: 'todo', label: 'Inicio' },
-        { key: 'personal', label: '¿Quién soy?' },
-        { key: 'experiencia', label: 'Experiencia' },
-        { key: 'estudios', label: 'Estudios' },
-        { key: 'proyectos', label: 'Proyectos' },
-        { key: 'contacto', label: 'Contacto' },
+export const BarraNavegacion = () => {
+    const items = [
+        { label: <a href="#quien-soy">¿Quién soy?</a>, key: 'quien-soy' },
+        { label: <a href="#experiencia">Experiencia</a>, key: 'experiencia' },
+        { label: <a href="#estudios">Estudios</a>, key: 'estudios' },
+        { label: <a href="#proyectos">Proyectos</a>, key: 'proyectos' },
+        { label: <a href="#contacto">Contacto</a>, key: 'contacto' },
     ];
 
     return (
-        <header style={{ background: '#fff', padding: '12px 24px 0', borderBottom: '1px solid #f0f0f0' }}>
-            <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-                <Title level={4} style={{ margin: '0 0 8px 0' }}>Portafolio Esteban Vásquez</Title>
-                <Tabs activeKey={pestanaActiva} onChange={setPestanaActiva} items={pestanas} />
-            </div>
-        </header>
+        <Menu
+            mode="horizontal"
+            items={items}
+            style={{ justifyContent: 'center', marginBottom: '24px' }}
+        />
     );
 };
